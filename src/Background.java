@@ -74,20 +74,31 @@ class Background {
         }
 
         switch (Character.toLowerCase(piece)) {
-            case 'p': return validPawn(fromRow,fromCol,toRow,toCol);
-            /*
+            case 'p': return validPawn(piece,fromRow,fromCol,toRow,toCol);
+
+            /* TODO one at a time
             case 'r': return validRook(fromRow,fromCol,toRow,toCol);
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
             case 'k': return validKing(fromRow,fromCol,toRow,toCol);
             */
+
             default: return false;
         }
     } // end isValid
     
-    public boolean validPawn(int fromRow, int fromCol, int toRow, int toCol) {
-        return false;
+    public boolean validPawn(char piece, int fromRow, int fromCol, int toRow, int toCol) {
+        int dir, startRow; // just learned how to do this haha
+
+        if (Character.isUpperCase(piece)) {
+            dir = 1; 
+            startRow = 1;
+        } else {
+            dir = -1;
+            startRow = 6;
+        }
+       return false; 
     }
 
 

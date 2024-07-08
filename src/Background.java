@@ -64,14 +64,31 @@ class Background {
 
         if (fromRow == toRow && fromCol == toCol) {
             return false;
-        }
+        } 
         if (toRow < 0 || toRow >= this.SIZE || toCol < 0 || toCol >= this.SIZE) {
             return false;
         }
+        if (Character.isUpperCase(piece) && Character.isUpperCase(board[toRow][toCol]) ||
+        Character.isLowerCase(piece) && Character.isLowerCase(board[toRow][toCol])) {
+            return false;
+        }
 
-        return false; // TODO remove once switch implemented
-        
+        switch (Character.toLowerCase(piece)) {
+            case 'p': return validPawn(fromRow,fromCol,toRow,toCol);
+            /*
+            case 'r': return validRook(fromRow,fromCol,toRow,toCol);
+            case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
+            case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
+            case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
+            case 'k': return validKing(fromRow,fromCol,toRow,toCol);
+            */
+            default: return false;
+        }
     } // end isValid
+    
+    public boolean validPawn(int fromRow, int fromCol, int toRow, int toCol) {
+        return false;
+    }
 
 
 

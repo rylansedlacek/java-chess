@@ -1,6 +1,5 @@
 class Background {
 
-
     private static final int SIZE = 8;
     private static char[][] board;
     private static Background theInstance;
@@ -76,9 +75,8 @@ class Background {
         switch (Character.toLowerCase(piece)) {
             case 'p': return validPawn(piece,fromRow,fromCol,toRow,toCol);
             case 'r': return validRook(fromRow,fromCol,toRow,toCol);
-
-            /*
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
+            /*
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
             case 'k': return validKing(fromRow,fromCol,toRow,toCol);
@@ -143,24 +141,20 @@ class Background {
             return false;
         }
         return true; //default
-    } //end rook
+    } // end rook
+    
+    public boolean validKnight(int fromRow, int fromCol, int toRow, int toCol) {
+        int rowDiff = Math.abs(toRow - fromRow);
+        int colDiff = Math.abs(toCol - fromRow);
 
-    public void printSample() {
-        System.out.println("Welcome to Chess");
-        System.out.println();
-        System.out.println("******SAMPLE******");
-        System.out.println("  0 1 2 3 4 5 6 7");
-        System.out.println("0 R N B Q K B N R");
-        System.out.println("1 P P P P P P P P");
-        System.out.println("2 . . . . . . . .");
-        System.out.println("3 . . . . . . . .");
-        System.out.println("4 . . . . . . . .");
-        System.out.println("5 . . . . . . . .");
-        System.out.println("6 p p p p p p p p");
-        System.out.println("7 r n b q k b n r");
-        System.out.println("******************");
-        System.out.println();
-    } //end sample
+        if ((rowDiff == 1 && colDiff == 2) || (rowDiff == 2 && colDiff == 1)) {
+            if (board[toRow][toCol] == '.' || Character.isUpperCase(board[fromRow][fromCol]) != 
+                    Character.isUpperCase(board[toRow][toCol])) {
+                return true;
+            }   
+        }
+        return false; // default
+    } // end knight
 
 
 

@@ -76,8 +76,8 @@ class Background {
             case 'p': return validPawn(piece,fromRow,fromCol,toRow,toCol);
             case 'r': return validRook(fromRow,fromCol,toRow,toCol);
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
-            /*
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
+            /*
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
             case 'k': return validKing(fromRow,fromCol,toRow,toCol);
             */
@@ -155,6 +155,36 @@ class Background {
         }
         return false; // default
     } // end knight
+    
+    public boolean validBishop(int fromRow, int fromCol, int toRow, int toCol) {
+        int rowDiff = Math.abs(toRow - fromRow);
+        int colDiff = Math.abs(toCol - fromCol);
+
+        if (rowDiff != colDiff) {
+            return false;
+        }
+
+        int rowDir = Integer.signum(toRow - fromRow);
+        int colDir = Integer.signum(toCol - fromCol);
+
+        int currRow = fromRow + rowDir;
+        int currCol = fromCol + colDir;
+
+        while (currRow != toRow || currCol != toCol) {
+            if (board[currRow][currCol] != '.') {
+                return false;
+            }
+            currRow += rowDir;
+            currCol += colDir;
+        }
+
+        if (board[toRow][toCol] != '.' && 
+                Character.isUpperCase(board[fromRow][fromCol]) == Character.isUpperCase(board[toRow][toCol])) {
+            return false;
+        }
+
+        return true; //default
+    } // end bishop
 
 
 

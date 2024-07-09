@@ -117,27 +117,33 @@ class Background {
             }
         }
         return false; // default
-    }
+    } //end pawn
 
     public boolean validRook(int fromRow, int fromCol, int toRow, int toCol) {
         if (fromRow == toRow && fromCol == toCol) {
             return false;
         }
 
-        int path = 0;
-        boolean rowDir = false;
-        boolean colDir = false;
-        if (fromRow == toRow) {
-            path = toCol - fromCol;
-            colDir = true;
-        } else {
-            path = toRow - fromRow;
-            rowDir = true;
+        int rowDir = Integer.signum(toRow - fromRow);
+        int colDir = Integer.signum(toCol - fromCol);
+
+        int currRow = fromRow + rowDir;
+        int currCol = fromCol + colDir;
+
+        while (currRow != toRow || currCol != toCol) {
+            if (board[currRow][currCol] != '.') {
+                return false;
+            }
+            currRow += rowDir;
+            currCol += colDir;
         }
 
-        return false; //TODO
-
-    }
+         if (board[toRow][toCol] != '.' && 
+                 Character.isUpperCase(board[fromRow][fromCol]) == Character.isUpperCase(board[toRow][toCol])) {
+            return false;
+        }
+        return true; //default
+    } //end rook
 
     public void printSample() {
         System.out.println("Welcome to Chess");

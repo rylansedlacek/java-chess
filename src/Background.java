@@ -75,9 +75,9 @@ class Background {
 
         switch (Character.toLowerCase(piece)) {
             case 'p': return validPawn(piece,fromRow,fromCol,toRow,toCol);
-
-            /* TODO one at a time
             case 'r': return validRook(fromRow,fromCol,toRow,toCol);
+
+            /*
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
@@ -116,8 +116,26 @@ class Background {
                     return true;
             }
         }
-
         return false; // default
+    }
+
+    public boolean validRook(int fromRow, int fromCol, int toRow, int toCol) {
+        if (fromRow == toRow && fromCol == toCol) {
+            return false;
+        }
+
+        int path = 0;
+        boolean rowDir = false;
+        boolean colDir = false;
+        if (fromRow == toRow) {
+            path = toCol - fromCol;
+            colDir = true;
+        } else {
+            path = toRow - fromRow;
+            rowDir = true;
+        }
+
+        return false; //TODO
 
     }
 

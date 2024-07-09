@@ -77,8 +77,8 @@ class Background {
             case 'r': return validRook(fromRow,fromCol,toRow,toCol);
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
-            /*
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
+            /*
             case 'k': return validKing(fromRow,fromCol,toRow,toCol);
             */
 
@@ -185,6 +185,35 @@ class Background {
 
         return true; //default
     } // end bishop
+
+    public boolean validQueen(int fromRow, int fromCol, int toRow, int toCol) {
+        int rowDiff = Math.abs(toRow - fromRow);
+        int colDiff = Math.abs(toCol - fromCol);
+
+        if (rowDiff == colDiff || fromRow == toRow || fromCol == toCol) {
+            int rowDir = Integer.signum(toRow - fromRow);
+            int colDir = Integer.signum(toCol - fromCol);
+
+            int currRow = fromRow + rowDir;
+            int currCol = fromCol + colDir;
+
+            while (currRow != toRow || currCol != toCol) {
+                if (board[currRow][currCol] != '.') {
+                    return false;
+                }
+                currRow += rowDir;
+                currCol += colDir;
+            }
+            if (board[toRow][toCol] != '.' &&
+                    Character.isUpperCase(board[fromRow][fromCol]) == Character.isUpperCase(board[toRow][toCol])) {
+                return false;
+            }
+            return true;
+        } // end big iff
+
+        return false; //default
+
+    } //end queen
 
 
 

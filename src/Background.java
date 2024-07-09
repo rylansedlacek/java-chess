@@ -98,8 +98,45 @@ class Background {
             dir = -1;
             startRow = 6;
         }
-       return false; 
+      
+        if (fromCol == toCol) {
+            if (toRow - fromRow == dir && board[toRow][toCol] == '.') {
+                return true;
+            }
+
+            if (fromRow == startRow && toRow - fromRow == 2 * dir &&
+                    board[toRow][toCol] == '.' && board[fromRow + dir][toCol] == '.') {
+                return true;
+            }   
+        }
+
+        if (Math.abs(fromCol - toCol) == 1 && toRow - fromRow == dir) {
+             if (board[toRow][toCol] != '.' &&
+                 Character.isUpperCase(piece) != Character.isUpperCase(board[toRow][toCol])) {
+                    return true;
+            }
+        }
+
+        return false; // default
+
     }
+
+    public void printSample() {
+        System.out.println("Welcome to Chess");
+        System.out.println();
+        System.out.println("******SAMPLE******");
+        System.out.println("  0 1 2 3 4 5 6 7");
+        System.out.println("0 R N B Q K B N R");
+        System.out.println("1 P P P P P P P P");
+        System.out.println("2 . . . . . . . .");
+        System.out.println("3 . . . . . . . .");
+        System.out.println("4 . . . . . . . .");
+        System.out.println("5 . . . . . . . .");
+        System.out.println("6 p p p p p p p p");
+        System.out.println("7 r n b q k b n r");
+        System.out.println("******************");
+        System.out.println();
+    } //end sample
 
 
 

@@ -5,8 +5,13 @@ public class Chess {
 
         // **TEST**
         // ****************
+        //game.printSample();
         game.initBoard();
         game.printBoard();
+
+        if (game.movePiece(6,4,4,4)) {
+            game.printBoard();
+        }
 
     }
 }

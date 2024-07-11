@@ -1,7 +1,7 @@
 class Background {
 
-    private static final int SIZE = 8;
-    private static char[][] board;
+    public static final int SIZE = 8;
+    public static char[][] board;
     private static Background theInstance;
 
     public Background () {

@@ -24,11 +24,18 @@ public class Chess {
 
              boolean hey = game.movePiece(fromRow, fromCol, toRow, toCol);
              if (hey) {
+                 System.out.println("**WHITE MOVE**");
                  game.printBoard();
                  hey = false;
+                 System.out.println("**BLACK MOVE**");
+                 Bot.makeMove();
+                 game.printBoard();
              } else {
-                 System.out.println("INVALID MOVE");
+                 System.out.println("*****INVALID MOVE*****");
              }
+
+           
+           
         } // end while
 
 

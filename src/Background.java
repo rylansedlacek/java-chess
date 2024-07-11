@@ -50,13 +50,29 @@ class Background {
    
     public boolean movePiece(int fromRow, int fromCol, int toRow, int toCol) {
         char piece = board[fromRow][fromCol];
+        boolean white = Character.isLowerCase(piece);
 
         if (isValidMove(piece, fromRow, fromCol, toRow, toCol)) {
+            char captured = board[toRow][toCol];
             board[toRow][toCol] = piece;
             board[fromRow][fromCol] = '.';
-            return true;
+
+            boolean inCheck = isKingInCheck(white);
+
+            board[fromRow][fromCol] = piece;
+            board[toRow][toCol] = captured;
+
+            if (!inCheck) {
+                board[toRow][toCol] = piece;
+                board[fromRow][fromCol] = '.';
+                return true;
+            }   
+
         }
-          return false;
+
+    return false;
+
+
     } // end movePiece
     
     public boolean isValidMove(char piece, int fromRow, int fromCol, int toRow, int toCol) {
@@ -224,6 +240,41 @@ class Background {
         }
         return false;
     } //end king
+    //
+
+    public boolean isKingInCheck(boolean white) {
+        int kingRow = -1, kingCol = -1;
+
+        for (int i=0; i<this.SIZE; i++) {
+           for (int j=0; j<this.SIZE; j++) {
+                if (white && board[i][j] == 'k') {
+                    kingRow = i;
+                    kingCol = j;
+                    break;
+                } else if (!white && board[i][j] == 'K'){
+                    kingRow = i;
+                    kingCol = j;
+                    break;
+                }
+            }
+           if (kingRow != -1) {
+               break;
+           }
+        }
+        
+        for (int i=0; i<this.SIZE; i++) {
+            for (int j =0; j<this.SIZE; j++) {
+                char piece = board[i][j];
+                if ((white && Character.isUpperCase(piece)) || (!white && Character.isLowerCase(piece))) {
+                    if (isValidMove(piece, i, j, kingRow, kingCol)) {
+                        return true;
+                    }
+                }
+            } 
+
+        }
+        return false;
+    } // end check check 
 
 
 

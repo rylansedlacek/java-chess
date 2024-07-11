@@ -78,10 +78,7 @@ class Background {
             case 'n': return validKnight(fromRow,fromCol,toRow,toCol);
             case 'b': return validBishop(fromRow,fromCol,toRow,toCol);
             case 'q': return validQueen(fromRow,fromCol,toRow,toCol);
-            /*
             case 'k': return validKing(fromRow,fromCol,toRow,toCol);
-            */
-
             default: return false;
         }
     } // end isValid
@@ -214,6 +211,19 @@ class Background {
         return false; //default
 
     } //end queen
+    
+    public boolean validKing(int fromRow, int fromCol, int toRow, int toCol) {
+        int rowDiff = Math.abs(toRow - fromRow);
+        int colDiff = Math.abs(toCol - fromCol);
+
+        if (rowDiff <= 1 && colDiff <= 1) {
+          if (board[toRow][toCol] == '.' ||
+                  Character.isUpperCase(board[fromRow][fromCol]) != Character.isUpperCase(board[toRow][toCol])) {
+              return true;
+          }
+        }
+        return false;
+    } //end king
 
 
 

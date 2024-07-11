@@ -10,16 +10,11 @@ public class Chess {
         game.initBoard();
         game.printBoard();
 
-        if (game.movePiece(6,3,4,3)) {
-            if (game.movePiece(7,2,5,4)) {
-                if (game.movePiece(7,3,5,3)) {
-                    if (game.movePiece(5,3,5,0)) {
-                        game.printBoard();
-            
-                    }
-                }
+
+        if (game.movePiece(6,4,4,4)) {
+            if (game.movePiece(7,4,6,4)) {
+                game.printBoard();
             }
         }
-
     }    
 }

@@ -74,6 +74,8 @@ class Background {
 
 
     } // end movePiece
+    //
+    
     
     public boolean isValidMove(char piece, int fromRow, int fromCol, int toRow, int toCol) {
 

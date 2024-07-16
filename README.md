@@ -6,7 +6,6 @@
 - Created July 2024.
 - Coded in Java.
 
-<!--
 <h2>How to use on a <b>CLI (Command Line Interface)</b></h2>
 
 1. Download the <b>src</b> and <b>files</b> directories.
@@ -19,13 +18,13 @@
    
        java Chess
 
-6. Follow the tutorial.
-7. Play Chess!
--->
+5. Play Chess!
+
 
 <h2>Features:</h2>
 
 - Use of the <b>Singleton</b> pattern.
+- Use of the <b>Minimax</b> decision rule for Chess Engine.
 - Console based, but still extremely easy to understand user interface
 <!-- - Chess Bot, with adjustable skill levels! -->
 

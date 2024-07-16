@@ -1,4 +1,6 @@
 <h1><u>Console Based Chess</u></h1>
+
+![image](https://github.com/user-attachments/assets/3e6a6006-2ce0-48c7-b167-ff873000d58e)
 <h2>About:</h2>
 
 <h2>[CURRENTLY IN PROGRESS]</h2>
@@ -27,6 +29,9 @@
 - Use of the <b>Minimax</b> decision rule for Chess Engine.
 - Console based, but still extremely easy to understand user interface
 <!-- - Chess Bot, with adjustable skill levels! -->
+
+
+
 
 -----------------------------------------------------
 <h2>Version 1.0 Summer 2024</h2>

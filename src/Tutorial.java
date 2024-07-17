@@ -2,7 +2,11 @@ class Tutorial {
            
     public Tutorial() { }
 
-        public void printSample() {
+        public void printSample() throws InterruptedException {
+
+        Thread.sleep(1000);
+
+
         System.out.println("Welcome to Chess");
         System.out.println();
         System.out.println("******SAMPLE******");

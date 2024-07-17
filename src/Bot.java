@@ -5,11 +5,15 @@ import java.util.ArrayList;
 class Bot {
     private static Random RANDOM = new Random();
         
-    public static void makeMove() {
+    public static void makeMove() throws InterruptedException {
         List<Move> validMoves = generateAllValidMoves();
         if (!validMoves.isEmpty()) {
           //  Move move = validMoves.get(getBestMove());
             Move move = validMoves.get(RANDOM.nextInt(validMoves.size()));
+            System.out.println();
+            System.out.println("Thinking...");
+            System.out.println();
+            Thread.sleep(600);
             Background.instance().movePiece(move.fromRow, move.fromCol, move.toRow, move.toCol);
         }
     }  

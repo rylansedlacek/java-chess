@@ -75,6 +75,11 @@ class Background {
 
     } // end movePiece
     //
+   public void bruteMove(int fromRow, int fromCol, int toRow, int toCol) {
+      char piece = board[fromRow][fromCol];
+      board[toRow][toCol] = piece;
+      board[fromRow][fromCol] = '.';
+   }
     
     
     public boolean isValidMove(char piece, int fromRow, int fromCol, int toRow, int toCol) {

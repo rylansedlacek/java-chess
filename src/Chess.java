@@ -24,7 +24,6 @@ public class Chess {
         if (choice == 1) {
             try {
                 t.printSample();
-
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }   

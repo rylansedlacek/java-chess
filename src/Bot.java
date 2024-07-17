@@ -8,7 +8,9 @@ class Bot {
     public static void makeMove() throws InterruptedException {
         List<Move> validMoves = generateAllValidMoves();
         if (!validMoves.isEmpty()) {
-          //  Move move = validMoves.get(getBestMove());
+            int test = getBestMove();
+            System.out.println(test);
+          //  Move move = validMoves.get(test);
             Move move = validMoves.get(RANDOM.nextInt(validMoves.size()));
             System.out.println();
             System.out.println("Thinking...");
@@ -49,12 +51,12 @@ class Bot {
         // add to row
         // add to col
        
-        for (int i=0; i<0; i++) {
+        for (int i=0; i<valid.size(); i++) {
             Move newMove = valid.get(i);
             Background.instance().movePiece(newMove.fromRow, newMove.fromCol, newMove.toRow, newMove.toCol);
 
-            int boardVal = boardValue();
-            Background.instance().movePiece(newMove.toRow, newMove.toCol, newMove.fromRow, newMove.fromCol);
+            int boardVal = -boardValue();
+            Background.instance().bruteMove(newMove.toRow, newMove.toCol, newMove.fromRow, newMove.fromCol);
 
             if (boardVal > bestValue) {
                 bestValue = boardVal;
@@ -68,7 +70,7 @@ class Bot {
         int total = 0;
         for (int i=0; i<8; ++i) {
             for (int j=0; j<0; ++j) {
-                total += getPieceValue(Background.board[i][j]);
+                total += Math.abs(getPieceValue(Background.board[i][j]));
             }
 
         }

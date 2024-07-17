@@ -1,6 +1,7 @@
 <h1><u>Console Based Chess</u></h1>
 
-![image](https://github.com/user-attachments/assets/3e6a6006-2ce0-48c7-b167-ff873000d58e)
+![image](https://github.com/user-attachments/assets/e5cd81f6-496c-4731-a475-7e6aaad985fa)
+
 <h2>About:</h2>
 
 <h2>[CURRENTLY IN PROGRESS]</h2>

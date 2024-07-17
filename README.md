@@ -1,6 +1,7 @@
 <h1><u>Console Based Chess</u></h1>
 
-![image](https://github.com/user-attachments/assets/e5cd81f6-496c-4731-a475-7e6aaad985fa)
+![image](https://github.com/user-attachments/assets/a7aa6d27-0a3b-467f-9e6a-bf122e4cb361)
+
 
 <h2>About:</h2>
 

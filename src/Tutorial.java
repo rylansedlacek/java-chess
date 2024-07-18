@@ -5,7 +5,25 @@ class Tutorial {
         public void printSample() throws InterruptedException {
 
         System.out.println();
-        System.out.println("WELCOME TO TUTORIAL");
+        //System.out.println("WELCOME TO TUTORIAL");
+
+        System.out.print("W");
+        Thread.sleep(100);
+        System.out.print("E");
+        Thread.sleep(100);
+        System.out.print("L");
+        Thread.sleep(100);
+        System.out.print("C");
+        Thread.sleep(100);
+        System.out.print("O");
+        Thread.sleep(100);
+        System.out.print("M");
+        Thread.sleep(100);
+        System.out.print("E");
+        Thread.sleep(100);
+        System.out.print(" TO TUTORIAL");
+        System.out.println();
+
         System.out.println("=+=+=+=+=+=+=+=+=+=");
         System.out.println();
         System.out.println("Here is a sample board:");
@@ -104,6 +122,7 @@ class Tutorial {
         Thread.sleep(2000);
         System.out.println();
         System.out.println("That would be here:");
+        System.out.println();
         System.out.println("R N B Q K B N R");
         System.out.println("P P P P P P P P");
         System.out.println(". . . . . . . .");

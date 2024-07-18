@@ -10,8 +10,8 @@ class Bot {
         if (!validMoves.isEmpty()) {
            // int test = getBestMove();
           //  System.out.println(test);
-          //  Move move = getBestMove();
-           Move move = validMoves.get(RANDOM.nextInt(validMoves.size()));
+            Move move = getBestMove(); //IT WORKS!!!!!!!!!!!!!
+          // Move move = validMoves.get(RANDOM.nextInt(validMoves.size()));
             System.out.println();
             System.out.println("Thinking...");
             System.out.println();
@@ -47,12 +47,14 @@ class Bot {
        int bestMoveIndex = 0;
         Move bestMove = null;
 
+        
+
         // add from row
         // add from col
         // add to row
         // add to col
        
-        for (int i=0; i<valid.size(); i++) {
+        for (int i= RANDOM.nextInt(valid.size()); i<valid.size(); i++) {
             Move newMove = valid.get(i);
             Background.instance().movePiece(newMove.fromRow, newMove.fromCol, newMove.toRow, newMove.toCol);
 

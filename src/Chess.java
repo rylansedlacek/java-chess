@@ -31,6 +31,14 @@ public class Chess {
 
 
       if (choice == 2) {
+
+       System.out.println();
+       System.out.println("CHOOSE DIFFICULTY");
+       System.out.println("1 - easy");
+       System.out.println("2 - medium");
+       System.out.print("> ");
+       int c = stdin.nextInt();
+       Bot.setDiff(c);
        game.initBoard(); 
        System.out.println();
        game.printBoard();

@@ -4,14 +4,28 @@ import java.util.ArrayList;
 
 class Bot {
     private static Random RANDOM = new Random();
+    private static boolean easy = false;
+    private static boolean med = false;
+    private static Move move = null;
+
+    public static void setDiff(int choice) {
+        if (choice == 1) {
+            easy = true;
+        } else if (choice == 2) {
+            med = true;
+        }
+    }
         
     public static void makeMove() throws InterruptedException {
         List<Move> validMoves = generateAllValidMoves();
         if (!validMoves.isEmpty()) {
-           // int test = getBestMove();
-          //  System.out.println(test);
-            Move move = getBestMove(); //IT WORKS!!!!!!!!!!!!!
-          // Move move = validMoves.get(RANDOM.nextInt(validMoves.size()));
+         if (med) {
+            move = getBestMove();
+         }
+            
+         if (easy) {
+            move = validMoves.get(RANDOM.nextInt(validMoves.size()));
+         }
             System.out.println();
             System.out.println("Thinking...");
             System.out.println();
